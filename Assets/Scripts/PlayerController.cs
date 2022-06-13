@@ -17,8 +17,8 @@ public class PlayerController : MonoBehaviour
     {
         rb2D = gameObject.GetComponent<Rigidbody2D>();
 
-        moveSpeed = 3f;
-        jumpForce = 60f;
+        moveSpeed = 2f;
+        jumpForce = 30f;
         isJumping = false;
     }
 
@@ -34,12 +34,12 @@ public class PlayerController : MonoBehaviour
     {
         if(moveHorizontal > 0.1f || moveHorizontal < -0.1f)
         {
-            rb2D.AddForce(new Vector2(moveHorizontal * moveSpeed, 0f), ForceMode2d.Impulse);
+            rb2D.AddForce(new Vector2(moveHorizontal * moveSpeed, 0f), ForceMode2D.Impulse);
         }
 
         if(!isJumping && moveVertical > 0.1f)
         {
-            rb2D.AddForce(new Vector2(0f, moveVertical * jumpForce), ForceMode2d.Impulse);
+            rb2D.AddForce(new Vector2(0f, moveVertical * jumpForce), ForceMode2D.Impulse);
         }
     }
 
